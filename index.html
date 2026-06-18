@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliet Kasaya | Scottsdale and Phoenix Luxury Real Estate & Market Portal</title>
+    <meta name="description" content="Premium lead generation platform, real-time Scottsdale and Phoenix market intelligence, hyperlocal real estate news, and MLS CRM integration tools.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo" id="nav-logo">
+                <span class="logo-bold">YOUR</span>
+                <span class="logo-light">KASA</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#properties" class="nav-link public-element">Properties</a>
+                <a href="#market-stats" class="nav-link public-element">Market Insights</a>
+                <a href="#news" class="nav-link public-element">Hyperlocal News</a>
+                <a href="#contact" class="nav-link public-element">Contact</a>
+                <button class="portal-toggle" id="portal-btn">
+                    <i data-lucide="lock"></i>
+                    <span id="portal-btn-text">Agent Portal</span>
+                </button>
+            </nav>
+            
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main>
+        <!-- PUBLIC LANDING PAGE VIEW -->
+        <div id="public-view" class="active-view">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-bg-overlay"></div>
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <span class="hero-subtitle">SCOTTSDALE AND PHOENIX, ARIZONA</span>
+                        <h1 class="hero-title">Elevated Desert Living</h1>
+                        <p class="hero-lead">Curating the finest estates in Scottsdale and Phoenix, Paradise Valley, and Silverleaf. Real-time market analytics and hyperlocal insight for discerning buyers and sellers.</p>
+                        
+                        <!-- Instant Valuation Lead Gen Form -->
+                        <div class="valuation-card glass">
+                            <h3>Find Your Scottsdale and Phoenix Home's Value</h3>
+                            <form id="hero-valuation-form" class="valuation-form">
+                                <div class="form-row">
+                                    <div class="form-group flex-2">
+                                        <label for="val-address" class="sr-only">Property Address</label>
+                                        <input type="text" id="val-address" placeholder="Enter your property address..." required>
+                                    </div>
+                                    <div class="form-group flex-1">
+                                        <label for="val-email" class="sr-only">Email Address</label>
+                                        <input type="email" id="val-email" placeholder="Your email..." required>
+                                    </div>
+                                    <button type="submit" class="btn btn-gold">Get Valuation</button>
+                                </div>
+                            </form>
+                            <p class="form-note">Get an instant CMA (Comparative Market Analysis) synced with active FlexMLS data.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-image-container">
+                        <div class="hero-image-wrapper">
+                            <img src="hero-home.png" alt="Luxury Estate in North Scottsdale and Phoenix" class="hero-image">
+                            <!-- Floating Glass Stat -->
+                            <div class="floating-stat glass">
+                                <div class="stat-badge">
+                                    <i data-lucide="trending-up"></i>
+                                    <span>Live Scottsdale and Phoenix MLS Feed</span>
+                                </div>
+                                <div class="stat-main">
+                                    <span class="stat-label">Median Sale Price</span>
+                                    <span class="stat-val">$1,485,000</span>
+                                </div>
+                                <div class="stat-footer">
+                                    <span class="stat-change positive">+4.2% Year-Over-Year</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact & Lead Capture -->
+            <section id="contact" class="contact-section section-light">
+                <div class="section-container">
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <span class="section-subtitle">GET IN TOUCH</span>
+                            <h2 class="section-title">Partner with Juliet Kasaya</h2>
+                            <p class="contact-lead">Whether selling an architectural custom estate in Silverleaf or finding your winter retreat in Old Town, leverage local Scottsdale and Phoenix expertise backed by state-of-the-art CRM and MLS integrations.</p>
+                            
+                            <div class="agent-profile-card glass">
+                                <img src="agent-headshot.jpg" alt="Juliet Kasaya" class="agent-photo">
+                                <div>
+                                    <h3>Juliet Kasaya</h3>
+                                    <p class="agent-title">Scottsdale and Phoenix Luxury Real Estate Advisor</p>
+                                    <div class="agent-badges">
+                                        <span class="badge">ARMLS Member</span>
+                                        <span class="badge">Luxury Presence CRM</span>
+                                    </div>
+                                    <p class="agent-meta"><i data-lucide="phone"></i> 480-770-6570</p>
+                                    <p class="agent-meta"><i data-lucide="mail"></i> kasayaandco@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-form-card glass">
+                            <h3>Schedule a Consultation or Tour</h3>
+                            <form id="contact-lead-form">
+                                <div class="form-group">
+                                    <label for="lead-name">Full Name</label>
+                                    <input type="text" id="lead-name" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group flex-1">
+                                        <label for="lead-email">Email Address</label>
+                                        <input type="email" id="lead-email" placeholder="john@example.com" required>
+                                    </div>
+                                    <div class="form-group flex-1">
+                                        <label for="lead-phone">Phone Number</label>
+                                        <input type="tel" id="lead-phone" placeholder="(480) 555-0100" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group flex-1">
+                                        <label for="lead-role">I am looking to...</label>
+                                        <select id="lead-role">
+                                            <option value="Buy">Buy a Scottsdale and Phoenix Home</option>
+                                            <option value="Sell">Sell my Scottsdale and Phoenix Home</option>
+                                            <option value="Invest">Invest in AZ Real Estate</option>
+                                            <option value="Browse">General Market Inquiry</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group flex-1">
+                                        <label for="lead-budget">Price Range</label>
+                                        <select id="lead-budget">
+                                            <option value="$500K - $1M">$500,000 - $1,000,000</option>
+                                            <option value="$1M - $2.5M">$1,000,000 - $2,500,000</option>
+                                            <option value="$2.5M - $5M">$2,500,000 - $5,000,000</option>
+                                            <option value="$5M+">$5,000,000+</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lead-msg">Message / Areas of Interest</label>
+                                    <textarea id="lead-msg" rows="4" placeholder="Tell me about your dream home or search timeline (e.g. Silverleaf, DC Ranch)..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-gold btn-full">Submit Inquiry</button>
+                            </form>
+                            <p class="form-privacy"><i data-lucide="shield-check"></i> Submissions sync automatically to the Luxury Presence CRM. Standard response time is under 15 minutes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Properties Showcases -->
+            <section id="properties" class="properties-section section-dark">
+                <div class="section-container">
+                    <div class="section-header">
+                        <div>
+                            <span class="section-subtitle">EXCLUSIVE PORTFOLIO</span>
+                            <h2 class="section-title">Scottsdale and Phoenix Showcases</h2>
+                        </div>
+                        <a href="https://armls.flexmls.com" target="_blank" class="text-link">
+                            View All FlexMLS Listings <i data-lucide="arrow-up-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="property-grid">
+                        <!-- Property 1 -->
+                        <div class="property-card glass">
+                            <div class="property-img-wrapper">
+                                <img src="hero-home.png" alt="Silverleaf Custom Estate">
+                                <span class="property-tag">Silverleaf</span>
+                            </div>
+                            <div class="property-details">
+                                <h3>18742 N Canyon Crossings</h3>
+                                <p class="property-price">$6,495,000</p>
+                                <div class="property-specs">
+                                    <span><i data-lucide="bed"></i> 5 Beds</span>
+                                    <span><i data-lucide="bath"></i> 6.5 Baths</span>
+                                    <span><i data-lucide="maximize"></i> 7,850 SqFt</span>
+                                </div>
+                                <button class="btn btn-gold btn-full request-showing-btn" data-property="18742 N Canyon Crossings">Request Private Tour</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Property 2 -->
+                        <div class="property-card glass">
+                            <div class="property-img-wrapper">
+                                <!-- Using generated image for visual completeness -->
+                                <img src="hero-home.png" style="filter: hue-rotate(15deg) brightness(0.95);" alt="DC Ranch Modern Hacienda">
+                                <span class="property-tag">DC Ranch</span>
+                            </div>
+                            <div class="property-details">
+                                <h3>9832 E Windrunner Drive</h3>
+                                <p class="property-price">$4,120,000</p>
+                                <div class="property-specs">
+                                    <span><i data-lucide="bed"></i> 4 Beds</span>
+                                    <span><i data-lucide="bath"></i> 4.5 Baths</span>
+                                    <span><i data-lucide="maximize"></i> 5,420 SqFt</span>
+                                </div>
+                                <button class="btn btn-gold btn-full request-showing-btn" data-property="9832 E Windrunner Drive">Request Private Tour</button>
+                            </div>
+                        </div>
+
+                        <!-- Property 3 -->
+                        <div class="property-card glass">
+                            <div class="property-img-wrapper">
+                                <img src="hero-home.png" style="filter: hue-rotate(330deg) brightness(1.05);" alt="Old Town Waterfront Penthouse">
+                                <span class="property-tag">Old Town</span>
+                            </div>
+                            <div class="property-details">
+                                <h3>7135 E Camelback Rd #801</h3>
+                                <p class="property-price">$1,975,000</p>
+                                <div class="property-specs">
+                                    <span><i data-lucide="bed"></i> 3 Beds</span>
+                                    <span><i data-lucide="bath"></i> 3.5 Baths</span>
+                                    <span><i data-lucide="maximize"></i> 3,110 SqFt</span>
+                                </div>
+                                <button class="btn btn-gold btn-full request-showing-btn" data-property="7135 E Camelback Rd #801">Request Private Tour</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hyperlocal Market Dynamics -->
+            <section id="market-stats" class="market-section section-light">
+                <div class="section-container">
+                    <div class="section-header center">
+                        <span class="section-subtitle">LOCAL EXPERTISE</span>
+                        <h2 class="section-title">Scottsdale and Phoenix Market Intelligence</h2>
+                        <p class="section-description">Interactive tracking of luxury market performance filtered by zip code. Directly synced with real-time ARMLS / FlexMLS trends.</p>
+                    </div>
+
+                    <div class="market-grid">
+                        <div class="market-chart-card glass">
+                            <div class="chart-controls">
+                                <button class="chart-tab active" data-zip="all">Scottsdale and Phoenix (All)</button>
+                                <button class="chart-tab" data-zip="85255">North Scottsdale and Phoenix (85255)</button>
+                                <button class="chart-tab" data-zip="85260">Central (85260)</button>
+                                <button class="chart-tab" data-zip="85251">Old Town (85251)</button>
+                            </div>
+                            
+                            <div class="chart-container">
+                                <canvas id="marketChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="market-stats-sidebar">
+                            <div class="stat-card-small glass">
+                                <div class="stat-icon"><i data-lucide="dollar-sign"></i></div>
+                                <div>
+                                    <h4>Median Sales Price</h4>
+                                    <p class="stat-number" id="stat-median-price">$1,485,000</p>
+                                    <span class="stat-delta positive"><i data-lucide="arrow-up"></i> 4.2% YoY</span>
+                                </div>
+                            </div>
+                            <div class="stat-card-small glass">
+                                <div class="stat-icon"><i data-lucide="home"></i></div>
+                                <div>
+                                    <h4>Active Inventory</h4>
+                                    <p class="stat-number" id="stat-active-inventory">1,142 Units</p>
+                                    <span class="stat-delta negative"><i data-lucide="arrow-down"></i> -2.8% YoY</span>
+                                </div>
+                            </div>
+                            <div class="stat-card-small glass">
+                                <div class="stat-icon"><i data-lucide="calendar"></i></div>
+                                <div>
+                                    <h4>Median Days on Market</h4>
+                                    <p class="stat-number" id="stat-days-market">38 Days</p>
+                                    <span class="stat-delta positive"><i data-lucide="arrow-down"></i> -6 Days YoY</span>
+                                </div>
+                            </div>
+                            <div class="stat-card-small glass">
+                                <div class="stat-icon"><i data-lucide="gauge"></i></div>
+                                <div>
+                                    <h4>Market Type</h4>
+                                    <p class="stat-number" id="stat-market-type">Seller's Market</p>
+                                    <span class="stat-text text-gold">High luxury demand</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hyperlocal News Feed -->
+            <section id="news" class="news-section section-dark">
+                <div class="section-container">
+                    <div class="section-header">
+                        <div>
+                            <span class="section-subtitle">COMMUNITY PULSE</span>
+                            <h2 class="section-title">Scottsdale and Phoenix Hyperlocal Highlights</h2>
+                        </div>
+                        <span class="news-source-tag glass"><i data-lucide="radio"></i> Live Feed</span>
+                    </div>
+
+                    <div class="news-grid">
+                        <article class="news-card glass">
+                            <div class="news-meta">
+                                <span class="news-category">Development</span>
+                                <span class="news-date">May 2026</span>
+                            </div>
+                            <h3>North Scottsdale and Phoenix Saguaro Preservation Guidelines Updated</h3>
+                            <p>Scottsdale and Phoenix City Council has enacted refined zoning regulations for hillsides in the 85262 and 85255 zip codes, affecting new custom builds near Troon and Pinnacle Peak. Demand for custom lots remains high despite tighter constraints.</p>
+                            <a href="#contact" class="news-link">Ask How This Affects Your Lot Value <i data-lucide="chevron-right"></i></a>
+                        </article>
+
+                        <article class="news-card glass">
+                            <div class="news-meta">
+                                <span class="news-category">Market Trends</span>
+                                <span class="news-date">May 2026</span>
+                            </div>
+                            <h3>Old Town Condo Market Experiences Luxury Revitalization</h3>
+                            <p>A flood of upscale dining options and walkability expansions in the Arts District has sparked a 12% rise in demand for premium condominiums along the Arizona Canal Waterfront, creating a micro-seller's market for listings under $2M.</p>
+                            <a href="#contact" class="news-link">Request Old Town Inventory List <i data-lucide="chevron-right"></i></a>
+                        </article>
+
+                        <article class="news-card glass">
+                            <div class="news-meta">
+                                <span class="news-category">MLS Analysis</span>
+                                <span class="news-date">May 2026</span>
+                            </div>
+                            <h3>FlexMLS Inventory Shift: Spring Listings Stabilize Prices</h3>
+                            <p>ARMLS data shows a surge of active listings in McCormick Ranch and Gainey Ranch. This seasonal inflow is stabilizing prices, giving buyers additional leverage and negotiation runway in Central Scottsdale and Phoenix.</p>
+                            <a href="#contact" class="news-link">See Recent Sold Properties <i data-lucide="chevron-right"></i></a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+
+        <!-- UPGRADED AGENT COMMAND PORTAL VIEW (Toggled after Auth) -->
+        <div id="agent-view" class="hidden-view">
+            <div class="agent-portal-layout">
+                <!-- Left Sidebar Navigation Menu -->
+                <aside class="agent-sidebar">
+                    <div class="sidebar-brand">
+                        <span class="logo-bold">K</span><span class="logo-light">E</span>
+                        <span class="sidebar-brand-text">Command</span>
+                    </div>
+                    <nav class="sidebar-nav">
+                        <button class="sidebar-link active" data-panel="dashboard" id="sb-link-dashboard">
+                            <i data-lucide="layout-dashboard"></i>
+                            <span>Dashboard</span>
+                        </button>
+                        <button class="sidebar-link" data-panel="flexmls" id="sb-link-flexmls">
+                            <i data-lucide="search-code"></i>
+                            <span>FlexMLS Manager</span>
+                        </button>
+                        <button class="sidebar-link" data-panel="crm" id="sb-link-crm">
+                            <i data-lucide="git-branch"></i>
+                            <span>CRM Hub</span>
+                        </button>
+                        <button class="sidebar-link" data-panel="helper" id="sb-link-helper">
+                            <i data-lucide="clipboard-list"></i>
+                            <span>Day-to-Day Helper</span>
+                        </button>
+                        <button class="sidebar-link" data-panel="chats" id="sb-link-chats">
+                            <i data-lucide="message-square"></i>
+                            <span>Chatbot Logs</span>
+                        </button>
+                        <button class="sidebar-link" data-panel="rpr" id="sb-link-rpr">
+                            <i data-lucide="home"></i>
+                            <span>RPR Platform</span>
+                        </button>
+                        <button class="sidebar-link" data-panel="settings" id="sb-link-settings">
+                            <i data-lucide="settings"></i>
+                            <span>Settings</span>
+                        </button>
+                    </nav>
+                    <div class="sidebar-footer">
+                        <button class="sidebar-link logout-btn" id="agent-logout-btn">
+                            <i data-lucide="log-out"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- Main Active Panel Wrapper -->
+                <main class="agent-content-area">
+                    <!-- Top Bar Header -->
+                    <header class="agent-content-header">
+                        <div class="header-title-container">
+                            <h2 id="agent-panel-title">Dashboard Overview</h2>
+                            <p id="agent-panel-subtitle">Welcome back, Juliet. Systems synced successfully.</p>
+                        </div>
+                        <div class="agent-profile-pill">
+                            <i data-lucide="user" style="width: 15px; height: 15px; color: var(--gold); display: inline-block; vertical-align: middle;"></i>
+                            <span>Juliet Kasaya</span>
+                        </div>
+                    </header>
+
+                    <!-- PANEL 1: DASHBOARD OVERVIEW -->
+                    <div class="agent-panel active-panel" id="panel-dashboard">
+                        <!-- Quick Metrics -->
+                        <div class="portal-metrics-grid">
+                            <div class="metric-card glass">
+                                <div class="metric-icon"><i data-lucide="users"></i></div>
+                                <div>
+                                    <span class="metric-title">Captured Leads</span>
+                                    <h3 class="metric-val" id="metric-lead-count">3</h3>
+                                    <span class="metric-trend positive"><i data-lucide="trending-up"></i> Live CRM Sync</span>
+                                </div>
+                            </div>
+                            <div class="metric-card glass">
+                                <div class="metric-icon"><i data-lucide="refresh-cw"></i></div>
+                                <div>
+                                    <span class="metric-title">MLS Sync Listings</span>
+                                    <h3 class="metric-val">24 Active</h3>
+                                    <span class="metric-trend positive"><i data-lucide="check"></i> 100% up-to-date</span>
+                                </div>
+                            </div>
+                            <div class="metric-card glass">
+                                <div class="metric-icon"><i data-lucide="mail-check"></i></div>
+                                <div>
+                                    <span class="metric-title">Pending Follow-Ups</span>
+                                    <h3 class="metric-val" id="metric-followups">0</h3>
+                                    <span class="metric-trend positive"><i data-lucide="check"></i> All caught up</span>
+                                </div>
+                            </div>
+                            <div class="metric-card glass">
+                                <div class="metric-icon"><i data-lucide="zap"></i></div>
+                                <div>
+                                    <span class="metric-title">Response Rate</span>
+                                    <h3 class="metric-val">98.2%</h3>
+                                    <span class="metric-trend positive"><i data-lucide="zap"></i> Avg: 4.8 min</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portal-main-layout">
+                            <!-- Lead Pipeline Table -->
+                            <div class="portal-dashboard-left">
+                                <div class="dashboard-panel glass">
+                                    <div class="panel-header">
+                                        <h3><i data-lucide="table"></i> Lead Pipeline (Luxury Presence CRM Sync)</h3>
+                                        <button class="btn btn-outline btn-xs" id="clear-leads-btn">Reset Leads</button>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="leads-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Lead Name</th>
+                                                    <th>Contact Info</th>
+                                                    <th>Interest / Budget</th>
+                                                    <th>Status</th>
+                                                    <th>Last Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="leads-table-body">
+                                                <!-- Dynamically populated -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- System Logs Console -->
+                                <div class="dashboard-panel glass" style="margin-top: 30px;">
+                                    <div class="panel-header">
+                                        <h3><i data-lucide="terminal"></i> System Sync Logs (ARMLS FlexMLS & CRM Webhooks)</h3>
+                                        <span class="log-status">Streaming real-time...</span>
+                                    </div>
+                                    <div class="console-log-box" id="console-logs">
+                                        <!-- Dynamic logs append -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PANEL 2: FLEXMLS MANAGER -->
+                    <div class="agent-panel" id="panel-flexmls">
+                        <div class="dashboard-panel glass">
+                            <div class="panel-header">
+                                <h3><i data-lucide="search-code"></i> FlexMLS & ARMLS Direct Syndication</h3>
+                                <a href="https://armls.flexmls.com" target="_blank" class="btn btn-outline btn-xs">Open armls.flexmls.com <i data-lucide="external-link" style="width: 11px; height: 11px; display:inline-block; margin-left: 5px;"></i></a>
+                            </div>
+                            <div class="flexmls-embed-section">
+                                <p class="embed-desc">Integrate your active FlexMLS listings search. Below is a simulated live data-stream mapping ARMLS status logs.</p>
+                                
+                                <div class="simulated-iframe-wrapper">
+                                    <div class="iframe-header">
+                                        <span class="url-bar"><i data-lucide="lock"></i> https://armls.flexmls.com/cgi-bin/mainmenu.cgi?shared_search_id=scottsdale_idx</span>
+                                        <span class="actions-group"><i data-lucide="refresh-cw" style="width:12px; height:12px; cursor:pointer;"></i> <i data-lucide="maximize" style="width:12px; height:12px; cursor:pointer;"></i></span>
+                                    </div>
+                                    <div class="iframe-content flexmls-simulate">
+                                        <div class="mls-search-bar">
+                                            <input type="text" placeholder="Search Scottsdale and Phoenix Active MLS Listings..." value="85255 - North Scottsdale and Phoenix" readonly>
+                                            <button class="btn btn-gold btn-xs">Find Properties</button>
+                                        </div>
+                                        <div class="mls-listings-grid">
+                                            <div class="mls-item">
+                                                <div class="mls-item-img"></div>
+                                                <div class="mls-item-body">
+                                                    <h5>Silverleaf Custom Estate</h5>
+                                                    <p>MLS# 6748239 • $6,495,000</p>
+                                                    <span class="mls-badge active">Active IDX Syndicated</span>
+                                                </div>
+                                            </div>
+                                            <div class="mls-item">
+                                                <div class="mls-item-img" style="filter: hue-rotate(40deg);"></div>
+                                                <div class="mls-item-body">
+                                                    <h5>DC Ranch Golf Retreat</h5>
+                                                    <p>MLS# 6739210 • $4,120,000</p>
+                                                    <span class="mls-badge active">Active IDX Syndicated</span>
+                                                </div>
+                                            </div>
+                                            <div class="mls-item">
+                                                <div class="mls-item-img" style="filter: hue-rotate(80deg);"></div>
+                                                <div class="mls-item-body">
+                                                    <h5>Old Town Waterfront Penthouse</h5>
+                                                    <p>MLS# 6750912 • $1,975,000</p>
+                                                    <span class="mls-badge active">Active IDX Syndicated</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PANEL 3: CRM HUB -->
+                    <div class="agent-panel" id="panel-crm">
+                        <div class="dashboard-panel glass">
+                            <div class="panel-header">
+                                <h3><i data-lucide="git-branch"></i> Luxury Presence CRM Webhooks</h3>
+                                <a href="https://luxurypresence.com" target="_blank" class="btn btn-outline btn-xs">Open Luxury Presence <i data-lucide="external-link" style="width: 11px; height: 11px; display:inline-block; margin-left: 5px;"></i></a>
+                            </div>
+                            <div class="crm-settings-content">
+                                <p class="embed-desc">Configure your API connection parameters and monitor lead payloads sent from this landing page to your Luxury Presence account.</p>
+                                <div class="crm-config-grid">
+                                    <div class="config-card">
+                                        <h5>API Sync Settings</h5>
+                                        <div class="form-group">
+                                            <label>Luxury Presence Developer Key</label>
+                                            <input type="password" class="crm-input-field" value="lp_key_scottsdale_98432aef783" readonly style="background:rgba(0,0,0,0.5); padding:10px; border:1px solid var(--border-glass); border-radius:4px; color:var(--text-primary); font-family:var(--font-mono); font-size:0.8rem; width:100%; margin-top:5px;">
+                                        </div>
+                                        <div class="form-group" style="margin-top:15px;">
+                                            <label>Endpoint Webhook Target</label>
+                                            <input type="text" class="crm-input-field" value="https://leads.luxurypresence.com/v1/webhooks/agent/juliet" readonly style="background:rgba(0,0,0,0.5); padding:10px; border:1px solid var(--border-glass); border-radius:4px; color:var(--text-primary); font-family:var(--font-mono); font-size:0.8rem; width:100%; margin-top:5px;">
+                                        </div>
+                                        <div style="display:flex; gap:10px; margin-top:20px;">
+                                            <button class="btn btn-gold btn-xs" id="test-crm-sync-btn">Test Connection</button>
+                                            <button class="btn btn-outline btn-xs">Refresh Key</button>
+                                        </div>
+                                    </div>
+                                    <div class="config-card">
+                                        <h5>Webhook Dispatch Log</h5>
+                                        <div class="sync-logs-list" id="crm-webhook-logs">
+                                            <div class="sync-log-row"><span class="log-time">[17:35]</span> <span class="log-txt">Lead 'Amanda Miller' posted to LP API</span> <span class="log-badge success">201</span></div>
+                                            <div class="sync-log-row"><span class="log-time">[13:20]</span> <span class="log-txt">FlexMLS Comp query request success</span> <span class="log-badge success">200</span></div>
+                                            <div class="sync-log-row"><span class="log-time">[09:12]</span> <span class="log-txt">Handshake validation completed</span> <span class="log-badge success">200</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PANEL 4: DAY-TO-DAY HELPER (ANCILLARY WORKSPACE) -->
+                    <div class="agent-panel" id="panel-helper">
+                        <div class="helper-grid">
+                            <!-- Tasks and Quick Links -->
+                            <div class="helper-left">
+                                <div class="dashboard-panel glass">
+                                    <div class="panel-header">
+                                        <h3><i data-lucide="check-square"></i> Task Checklist & Planner</h3>
+                                    </div>
+                                    <div class="task-manager-content">
+                                        <form id="add-task-form">
+                                            <div style="display:flex; gap:8px; margin-bottom: 15px;">
+                                                <input type="text" id="new-task-input" placeholder="Add a new task (e.g. Schedule Silverleaf Tour, Call client)..." required style="flex-grow:1; background:rgba(0,0,0,0.4); border:1px solid var(--border-glass); border-radius:4px; padding:12px; color:var(--text-primary); font-family:var(--font-sans); font-size:0.85rem;">
+                                                <button type="submit" class="btn btn-gold"><i data-lucide="plus" style="width:14px; height:14px;"></i></button>
+                                            </div>
+                                        </form>
+                                        <ul class="task-list" id="task-list-items">
+                                            <!-- Dynamically populated from JS -->
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="dashboard-panel glass" style="margin-top: 30px;">
+                                    <div class="panel-header">
+                                        <h3><i data-lucide="external-link"></i> Quick-Launch Work Portals</h3>
+                                    </div>
+                                    <div class="helper-links-grid">
+                                        <a href="https://armls.flexmls.com" target="_blank" class="tool-link-card glass">
+                                            <i data-lucide="search-code"></i>
+                                            <span>FlexMLS Portal</span>
+                                        </a>
+                                        <a href="https://luxurypresence.com" target="_blank" class="tool-link-card glass">
+                                            <i data-lucide="git-branch"></i>
+                                            <span>Luxury Presence</span>
+                                        </a>
+                                        <a href="https://calendar.google.com" target="_blank" class="tool-link-card glass">
+                                            <i data-lucide="calendar"></i>
+                                            <span>Google Calendar</span>
+                                        </a>
+                                        <a href="https://www.docusign.com" target="_blank" class="tool-link-card glass">
+                                            <i data-lucide="signature"></i>
+                                            <span>DocuSign</span>
+                                        </a>
+                                        <a href="https://www.canva.com" target="_blank" class="tool-link-card glass">
+                                            <i data-lucide="image"></i>
+                                            <span>Canva Graphics</span>
+                                        </a>
+                                        <a href="https://azre.gov" target="_blank" class="tool-link-card glass">
+                                            <i data-lucide="shield-alert"></i>
+                                            <span>ADRE Licensing</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Copy-to-Clipboard Client Templates -->
+                            <div class="helper-right">
+                                <div class="dashboard-panel glass">
+                                    <div class="panel-header">
+                                        <h3><i data-lucide="mail"></i> Outbound Email Templates</h3>
+                                    </div>
+                                    <div class="templates-list">
+                                        <div class="template-card glass">
+                                            <h6>1. Valuation CMA Report</h6>
+                                            <p class="template-preview">Hi [Client], I've compiled your live Scottsdale and Phoenix MLS comps for your valuation. Let's schedule...</p>
+                                            <button class="btn btn-outline btn-xs btn-full copy-template-btn" data-template="Hi [Name],\n\nI have finished compiling the real-time Comparative Market Analysis (CMA) report for your property using the ARMLS database. Prices in your immediate Scottsdale and Phoenix neighborhood have shifted by +4.2% over the last few quarters, and custom lot demand remains strong.\n\nAre you available for a brief 10-minute phone call to review the active and pending comps this week?\n\nBest regards,\nJuliet Kasaya\nScottsdale Luxury Real Estate Advisor">Copy Template</button>
+                                        </div>
+                                        <div class="template-card glass" style="margin-top: 15px;">
+                                            <h6>2. Tour Scheduling Request</h6>
+                                            <p class="template-preview">Dear Agent, I would like to schedule a private tour of your listing for my client. They are pre-approved...</p>
+                                            <button class="btn btn-outline btn-xs btn-full copy-template-btn" data-template="Dear Agent,\n\nI am contacting you to schedule a private walkthrough tour of your luxury listing in Scottsdale and Phoenix. My clients are highly interested and currently pre-qualified. They are searching for properties in the DC Ranch / Silverleaf vicinity with these specific parameters.\n\nWould a showing be available this upcoming Thursday afternoon?\n\nBest regards,\nJuliet Kasaya\nScottsdale Luxury Real Estate Advisor">Copy Template</button>
+                                        </div>
+                                        <div class="template-card glass" style="margin-top: 15px;">
+                                            <h6>3. Lead Welcome Auto-Reply</h6>
+                                            <p class="template-preview">Thank you for visiting Your Kasa. Here are the latest market insights you requested...</p>
+                                            <button class="btn btn-outline btn-xs btn-full copy-template-btn" data-template="Hi [Name],\n\nThank you for reaching out to Your Kasa regarding Scottsdale and Phoenix real estate opportunities. I have synced your requirements with our CRM database and will begin filtering active MLS listings to match your preferred specifications and price point.\n\nI look forward to discussing how I can assist with your home search.\n\nBest regards,\nJuliet Kasaya\nScottsdale Luxury Real Estate Advisor">Copy Template</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PANEL: CHATBOT LOGS -->
+                    <div class="agent-panel" id="panel-chats">
+                        <div class="helper-grid">
+                            <!-- Left: Chat Sessions List -->
+                            <div class="helper-left">
+                                <div class="dashboard-panel glass">
+                                    <div class="panel-header">
+                                        <h3><i data-lucide="message-square"></i> Active Chat Sessions</h3>
+                                    </div>
+                                    <div class="chat-sessions-list" id="chat-sessions-list-container" style="display: flex; flex-direction: column; gap: 10px; max-height: 400px; overflow-y: auto;">
+                                        <!-- Dynamically generated threads -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Right: Chat Transcript Viewport -->
+                            <div class="helper-right">
+                                <div class="dashboard-panel glass" style="display: flex; flex-direction: column; height: 500px;">
+                                    <div class="panel-header" id="chat-transcript-header">
+                                        <h3><i data-lucide="message-square"></i> Session Transcript</h3>
+                                        <span class="log-status" id="active-session-status" style="color:var(--gold);">Select a thread</span>
+                                    </div>
+                                    <div class="chat-transcript-body" id="chat-transcript-body-container" style="flex-grow: 1; overflow-y: auto; padding: 20px; background: rgba(0,0,0,0.25); border-radius: 4px; display: flex; flex-direction: column; gap: 15px; font-size: 0.8rem; line-height: 1.4; max-height: 380px;">
+                                        <!-- Messages of selected thread -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PANEL: RPR HUB -->
+                    <div class="agent-panel" id="panel-rpr">
+                        <div class="dashboard-panel glass">
+                            <div class="panel-header">
+                                <h3><i data-lucide="home"></i> Realtor Property Resource (RPR) Integration</h3>
+                                <a href="https://www.narrpr.com" target="_blank" class="btn btn-outline btn-xs">Open narrpr.com <i data-lucide="external-link" style="width: 11px; height: 11px; display:inline-block; margin-left: 5px;"></i></a>
+                            </div>
+                            
+                            <div class="helper-grid" style="margin-top: 20px;">
+                                <!-- Left: RPR Report Builder Form -->
+                                <div class="helper-left">
+                                    <div class="crm-config-card" style="background:rgba(0,0,0,0.25); padding:20px; border-radius:6px; border:1px solid var(--border-glass);">
+                                        <h5 style="margin-bottom:15px; color:var(--gold); font-size:0.9rem; font-weight:600;">Generate Property & Comp Reports</h5>
+                                        <form id="rpr-generator-form">
+                                            <div class="form-group" style="margin-bottom:15px;">
+                                                <label style="display:block; font-size:0.8rem; margin-bottom:5px; color:var(--text-muted);">Property Address</label>
+                                                <input type="text" id="rpr-address" class="crm-input-field" placeholder="e.g. 10450 E Cactus Rd, Scottsdale and Phoenix, AZ 85259" required style="width:100%; background:rgba(0,0,0,0.5); border:1px solid var(--border-glass); padding:8px 12px; border-radius:4px; color:var(--text-primary);">
+                                            </div>
+                                            <div class="form-group" style="margin-bottom:15px;">
+                                                <label style="display:block; font-size:0.8rem; margin-bottom:5px; color:var(--text-muted);">Report Type</label>
+                                                <select id="rpr-report-type" class="crm-input-field" style="width:100%; background:rgba(0,0,0,0.5); border:1px solid var(--border-glass); padding:8px 12px; border-radius:4px; color:var(--text-primary); cursor:pointer;">
+                                                    <option value="property">Property Comprehensive Report (Detailed Listing, History, Comps)</option>
+                                                    <option value="seller">Seller's Valuation Report (CMA, Real-Time Market Valuation)</option>
+                                                    <option value="neighborhood">Neighborhood Demographics & School Stats Study</option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-gold btn-sm" id="rpr-submit-btn" style="width:100%;">Generate RPR Report</button>
+                                        </form>
+
+                                        <!-- Progress Bar for Generation -->
+                                        <div id="rpr-progress-container" class="progress-bar-container" style="display:none; margin-top:20px;">
+                                            <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted); margin-bottom:5px;">
+                                                <span id="rpr-progress-status">Initializing RPR API Connection...</span>
+                                                <span id="rpr-progress-percent">0%</span>
+                                            </div>
+                                            <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow:hidden;">
+                                                <div id="rpr-progress-bar" style="width: 0%; height: 100%; background: var(--gold-gradient); transition: width 0.1s linear;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Scottsdale and Phoenix RPR Market Stats Card -->
+                                    <div class="crm-config-card" style="background:rgba(0,0,0,0.25); padding:20px; border-radius:6px; border:1px solid var(--border-glass); margin-top:20px;">
+                                        <h5 style="margin-bottom:15px; color:var(--gold); font-size:0.9rem; font-weight:600;"><i data-lucide="trending-up" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:5px;"></i> RPR Market Vital Statistics</h5>
+                                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; font-size:0.8rem;">
+                                            <div style="background:rgba(0,0,0,0.2); padding:10px; border-radius:4px;">
+                                                <span style="display:block; color:var(--text-muted); font-size:0.75rem;">Median List Price</span>
+                                                <strong style="color:var(--text-primary);">$1,350,000</strong>
+                                            </div>
+                                            <div style="background:rgba(0,0,0,0.2); padding:10px; border-radius:4px;">
+                                                <span style="display:block; color:var(--text-muted); font-size:0.75rem;">Inventory Months</span>
+                                                <strong style="color:var(--text-primary);">3.4 Months</strong>
+                                            </div>
+                                            <div style="background:rgba(0,0,0,0.2); padding:10px; border-radius:4px;">
+                                                <span style="display:block; color:var(--text-muted); font-size:0.75rem;">Average Days in RPR</span>
+                                                <strong style="color:var(--text-primary);">42 Days</strong>
+                                            </div>
+                                            <div style="background:rgba(0,0,0,0.2); padding:10px; border-radius:4px;">
+                                                <span style="display:block; color:var(--text-muted); font-size:0.75rem;">List-to-Sale Ratio</span>
+                                                <strong style="color:var(--text-primary);">97.8%</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Right: Recent Reports List -->
+                                <div class="helper-right">
+                                    <div class="crm-config-card" style="background:rgba(0,0,0,0.25); padding:20px; border-radius:6px; border:1px solid var(--border-glass); height:100%; display:flex; flex-direction:column;">
+                                        <h5 style="margin-bottom:15px; color:var(--gold); font-size:0.9rem; font-weight:600;"><i data-lucide="clipboard-list" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:5px;"></i> Generated RPR Reports</h5>
+                                        <div id="rpr-reports-list" style="flex-grow:1; display:flex; flex-direction:column; gap:12px; overflow-y:auto; max-height:410px;">
+                                            <!-- Dynamically populated, with defaults -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PANEL 5: SETTINGS -->
+                    <div class="agent-panel" id="panel-settings">
+                        <div class="dashboard-panel glass">
+                            <div class="panel-header">
+                                <h3><i data-lucide="settings"></i> Control Settings</h3>
+                            </div>
+                            <div class="settings-content">
+                                <div class="form-group" style="max-width:400px;">
+                                    <label>Update Portal Pin/Passcode</label>
+                                    <input type="password" class="crm-input-field" value="scottsdale2026" style="background:rgba(0,0,0,0.5); padding:10px; border:1px solid var(--border-glass); border-radius:4px; color:var(--text-primary); font-family:var(--font-mono); font-size:0.8rem; width:100%; margin: 8px 0;" id="settings-passcode-field">
+                                    <button class="btn btn-gold btn-xs" id="save-passcode-btn">Save Passcode</button>
+                                </div>
+                                <hr style="border: 0; border-top: 1px solid var(--border-glass); margin: 30px 0;">
+                                <h5>Ancillary System Handshake Toggles</h5>
+                                <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:15px;">Enable or disable direct API endpoints. Disabling will simulate offline status logs on the dashboard.</p>
+                                <div style="display:flex; flex-direction:column; gap:15px;">
+                                    <label style="display:flex; align-items:center; gap:10px; font-size:0.85rem; cursor:pointer;">
+                                        <input type="checkbox" id="sync-armls-toggle" checked style="accent-color:var(--gold); width:16px; height:16px;">
+                                        <span>ARMLS FlexMLS IDX Auto-Sync API (armls.flexmls.com)</span>
+                                    </label>
+                                    <label style="display:flex; align-items:center; gap:10px; font-size:0.85rem; cursor:pointer;">
+                                        <input type="checkbox" id="sync-crm-toggle" checked style="accent-color:var(--gold); width:16px; height:16px;">
+                                        <span>Luxury Presence CRM Lead Posting webhook</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-bold">YOUR</span>
+                    <span class="logo-light">KASA</span>
+                </a>
+                <p>Scottsdale and Phoenix's premier real estate consultancy. Fusing local mastery with predictive data intelligence.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Neighborhoods</h4>
+                <ul>
+                    <li><a href="#market-stats" class="public-element">North Scottsdale and Phoenix (85255)</a></li>
+                    <li><a href="#market-stats" class="public-element">DC Ranch / Silverleaf</a></li>
+                    <li><a href="#market-stats" class="public-element">McCormick Ranch (85260)</a></li>
+                    <li><a href="#market-stats" class="public-element">Old Town (85251)</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Integrations</h4>
+                <ul>
+                    <li><a href="https://armls.flexmls.com" target="_blank">FlexMLS Portal</a></li>
+                    <li><a href="https://luxurypresence.com" target="_blank">Luxury Presence CRM</a></li>
+                    <li><a href="#contact" class="public-element">Instant Valuation API</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Juliet Kasaya, PLLC. All rights reserved. Brokerage licensing via local regulations. Equal Housing Opportunity.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE CHATBOT WIDGET -->
+    <div class="chatbot-container" id="chatbot-container">
+        <!-- Chat trigger button -->
+        <button class="chatbot-trigger" id="chatbot-trigger" aria-label="Open chat assistant">
+            <i data-lucide="message-square" class="icon-open"></i>
+            <span class="trigger-text">How can I help?</span>
+            <i data-lucide="x" class="icon-close"></i>
+            <span class="trigger-ping"></span>
+        </button>
+
+        <!-- Chat window -->
+        <div class="chatbot-window glass" id="chatbot-window">
+            <div class="chat-header">
+                <div class="agent-avatar-status">
+                    <img src="agent-headshot.jpg" alt="Juliet's Assistant" class="chat-agent-avatar">
+                    <span class="status-dot online"></span>
+                </div>
+                <div>
+                    <h4>Juliet's Desert Assistant</h4>
+                    <p class="chat-status-text">Typically replies instantly</p>
+                </div>
+            </div>
+
+            <!-- Chat messages box -->
+            <div class="chat-messages" id="chat-messages">
+                <div class="message incoming">
+                    <p>Welcome to Scottsdale and Phoenix! 🌵 I'm Juliet's assistant. Whether you're looking for home listings, Scottsdale and Phoenix market metrics, or scheduling a consultation, I'm here to help.</p>
+                </div>
+                <div class="message incoming">
+                    <p>How can I help?</p>
+                </div>
+            </div>
+
+            <!-- Quick replies -->
+            <div class="chat-quick-replies" id="chat-quick-replies">
+                <button class="quick-reply-btn" data-reply="Scottsdale and Phoenix Market Info">📈 Scottsdale and Phoenix Market Info</button>
+                <button class="quick-reply-btn" data-reply="Search FlexMLS Listings">🔍 Search FlexMLS Listings</button>
+                <button class="quick-reply-btn" data-reply="Book a Showing / Consult">📅 Book a Showing</button>
+                <button class="quick-reply-btn" data-reply="Contact Juliet">✉️ Contact Juliet</button>
+            </div>
+
+            <!-- Chat input -->
+            <form class="chat-input-area" id="chat-input-form">
+                <input type="text" id="chat-input" placeholder="Type your message here..." required autocomplete="off">
+                <button type="submit" class="chat-send-btn" aria-label="Send message">
+                    <i data-lucide="send"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- AGENT LOGIN MODAL overlay -->
+    <div class="login-modal-overlay" id="login-modal">
+        <div class="login-card glass">
+            <button class="login-close" id="login-close-btn" aria-label="Close login modal">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="login-header">
+                <div class="logo">
+                    <span class="logo-bold">YOUR</span><span class="logo-light">KASA</span>
+                </div>
+                <h3>Agent Workspace Authentication</h3>
+                <p>Accessing day-to-day ancillary systems</p>
+            </div>
+            <form id="agent-login-form">
+                <div class="form-group">
+                    <label for="login-email">Agent Email</label>
+                    <input type="email" id="login-email" value="kasayaandco@gmail.com" required style="background:rgba(0,0,0,0.5); padding:12px; border:1px solid var(--border-glass); border-radius:4px; color:var(--text-primary); font-family:var(--font-sans); font-size:0.85rem; width:100%; margin-top:5px;">
+                </div>
+                <div class="form-group" style="margin-top:15px;">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required style="background:rgba(0,0,0,0.5); padding:12px; border:1px solid var(--border-glass); border-radius:4px; color:var(--text-primary); font-family:var(--font-sans); font-size:0.85rem; width:100%; margin-top:5px;">
+                </div>
+                <div class="login-error-msg" id="login-error-msg"></div>
+                <button type="submit" class="btn btn-gold btn-full" style="margin-top:20px;">Unlock Workspace</button>
+            </form>
+            <div class="login-hint">
+                <p>Demo Credentials:</p>
+                <code>kasayaandco@gmail.com</code> / <code>scottsdale2026</code>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
