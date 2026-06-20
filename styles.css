@@ -1,0 +1,1546 @@
+/* CUSTOM HIGH-FIDELITY THEME - YOUR KASA SCOTTSDALE REAL ESTATE */
+
+/* CSS Variables */
+:root {
+    --primary-bg: #ffffff; /* Clean pure white */
+    --secondary-bg: #ffffff; /* Clean pure white */
+    --card-bg-glass: rgba(255, 255, 255, 0.8); /* Frosted white glass */
+    --card-bg-glass-solid: rgba(255, 255, 255, 0.95); /* Denser frosted glass */
+    
+    --gold: #d4af37; /* Sophisticated metallic gold */
+    --gold-glow: rgba(212, 175, 55, 0.15);
+    --gold-gradient: linear-gradient(135deg, #f5d77f 0%, #d4af37 50%, #b58d24 100%);
+    --gold-gradient-hover: linear-gradient(135deg, #ffe494 0%, #e5c04f 50%, #cfa02f 100%);
+    --white: #ffffff;
+    
+    --text-primary: #1c1a17; /* Sophisticated dark bronze-charcoal */
+    --text-muted: #5e5a55; /* Warm dark grey sand */
+    --text-dark: #090807; /* Pure dark charcoal */
+    
+    --border-glass: rgba(0, 0, 0, 0.08); /* Frosted light glass border */
+    --border-gold: rgba(212, 175, 55, 0.35);
+    --border-glass-bright: rgba(0, 0, 0, 0.14);
+    
+    --shadow-main: 0 15px 35px rgba(0, 0, 0, 0.05);
+    --shadow-glow: 0 0 30px rgba(212, 175, 55, 0.08);
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --font-mono: 'Inter', monospace;
+    
+    --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--primary-bg);
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 100% 60%, rgba(212, 175, 55, 0.03) 0%, transparent 40%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    overflow-x: hidden;
+    letter-spacing: 0.02em;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Glassmorphism Classes */
+.glass {
+    background: var(--card-bg-glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--border-glass);
+    box-shadow: var(--shadow-glass);
+    transition: var(--transition);
+}
+
+.glass:hover {
+    border-color: var(--border-gold);
+    box-shadow: var(--shadow-glass), var(--shadow-glow);
+    background: rgba(22, 21, 20, 0.55);
+}
+
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-gold {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header & Navigation (Nav logo and buttons matching preview) */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(9, 8, 7, 0.7);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid var(--border-glass);
+    transition: var(--transition);
+}
+
+.nav-container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 16px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.35rem;
+    letter-spacing: 3px;
+    transition: var(--transition);
+}
+
+.logo-bold {
+    font-weight: 700;
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+}
+
+.logo-light {
+    font-weight: 300;
+    color: var(--text-primary);
+}
+
+.logo:hover {
+    opacity: 0.9;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-link {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: var(--transition);
+    position: relative;
+    padding: 8px 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold-gradient);
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Agent Toggle Lock Button styling */
+.portal-toggle {
+    background: var(--card-bg-glass);
+    color: var(--text-primary);
+    border: 1px solid var(--border-glass-bright);
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.portal-toggle:hover {
+    border-color: var(--border-gold);
+    color: var(--gold);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-1px);
+}
+
+.portal-toggle.active-portal {
+    background: rgba(212, 175, 55, 0.08);
+    color: var(--gold);
+    border-color: var(--border-gold);
+}
+
+.mobile-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+/* Page Views */
+.active-view {
+    display: block;
+    animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hidden-view {
+    display: none;
+}
+
+/* Hero Section UI Elements */
+.hero {
+    min-height: 100vh;
+    padding-top: 130px;
+    padding-bottom: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-subtitle {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    line-height: 1.12;
+    margin-bottom: 25px;
+    color: var(--white);
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    letter-spacing: -0.01em;
+}
+
+.hero-lead {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 45px;
+    max-width: 580px;
+}
+
+/* Valuation Card (Glass Box in Hero) */
+.valuation-card {
+    padding: 30px;
+    border-radius: 6px;
+    border: 1px solid var(--border-glass-bright);
+}
+
+.valuation-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    margin-bottom: 20px;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+}
+
+.valuation-form .form-row {
+    display: flex;
+    gap: 12px;
+}
+
+.valuation-form input {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-glass);
+    padding: 14px 18px;
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.valuation-form input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Outlined & Gold Gradient Buttons */
+.btn {
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-gold {
+    background: var(--gold-gradient);
+    color: var(--text-dark);
+}
+
+.btn-gold:hover {
+    background: var(--gold-gradient-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border-gold);
+    color: var(--gold);
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: var(--text-dark);
+    transform: translateY(-2px);
+    border-color: var(--gold);
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.25);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Floating Live Feeds Stat Box */
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-glass-bright);
+}
+
+.floating-stat {
+    position: absolute;
+    bottom: -20px;
+    left: -40px;
+    padding: 24px;
+    border-radius: 6px;
+    width: 300px;
+    animation: float 5.5s ease-in-out infinite;
+    z-index: 10;
+    border: 1px solid var(--border-glass-bright);
+}
+
+.stat-val {
+    font-family: var(--font-serif);
+    font-size: 1.95rem;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+/* Showcases Property Cards Grid */
+.properties-section {
+    padding: 100px 0;
+}
+
+.section-container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 2.6rem;
+    color: var(--white);
+    letter-spacing: -0.01em;
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+.property-card {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border-glass);
+}
+
+.property-img-wrapper {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.property-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.property-card:hover .property-img-wrapper img {
+    transform: scale(1.06);
+}
+
+.property-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(9, 8, 7, 0.85);
+    border: 1px solid var(--border-gold);
+    color: var(--gold);
+    padding: 5px 12px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.property-details {
+    padding: 28px;
+}
+
+.property-details h3 {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.property-price {
+    font-size: 1.3rem;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.property-specs {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 28px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.property-specs span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.property-specs i {
+    width: 15px;
+    height: 15px;
+    color: var(--gold);
+}
+
+/* Market Intelligence Grid & Interactive Tabbed Charts */
+.market-section {
+    padding: 100px 0;
+}
+
+.market-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.market-chart-card {
+    padding: 35px;
+    border-radius: 6px;
+    border: 1px solid var(--border-glass-bright);
+}
+
+.chart-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.chart-tab {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-glass);
+    color: var(--text-muted);
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.chart-tab:hover {
+    border-color: var(--border-gold);
+    color: var(--text-primary);
+}
+
+.chart-tab.active {
+    background: var(--gold);
+    color: var(--text-dark);
+    border-color: var(--gold);
+}
+
+.chart-container {
+    height: 340px;
+}
+
+/* Market Stats Sidebar Cards */
+.market-stats-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat-card-small {
+    padding: 22px;
+    border-radius: 6px;
+    border: 1px solid var(--border-glass);
+}
+
+.stat-number {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 2px 0;
+}
+
+/* Community News Cards */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+.news-card {
+    padding: 35px;
+    border-radius: 6px;
+    border-left: 3px solid var(--gold);
+    border-top: 1px solid var(--border-glass);
+    border-right: 1px solid var(--border-glass);
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.news-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    color: var(--text-dark);
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+/* Contact Lead Capture Form styling */
+.contact-section {
+    padding: 100px 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 60px;
+}
+
+.agent-profile-card {
+    padding: 35px;
+    border-radius: 6px;
+    border: 1px solid var(--border-glass-bright);
+}
+
+.agent-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold);
+    box-shadow: var(--shadow-glow);
+}
+
+.contact-form-card {
+    padding: 45px;
+    border-radius: 6px;
+    border: 1px solid var(--border-glass-bright);
+}
+
+.contact-form-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--white);
+    margin-bottom: 25px;
+}
+
+.contact-form-card input,
+.contact-form-card select,
+.contact-form-card textarea {
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid var(--border-glass);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    padding: 12px 16px;
+    width: 100%;
+    transition: var(--transition);
+}
+
+.contact-form-card input:focus,
+.contact-form-card select:focus,
+.contact-form-card textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+}
+
+/* Chatbot Floating Concierge (Glass window matching mockup description) */
+.chatbot-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+}
+
+.chatbot-trigger {
+    height: 50px;
+    padding: 0 24px;
+    border-radius: 25px;
+    background: var(--gold-gradient);
+    color: var(--text-dark);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.45);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+}
+
+.chatbot-trigger:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.6);
+}
+
+.chatbot-trigger.chat-open {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--secondary-bg);
+    color: var(--gold);
+    border: 1px solid var(--border-gold);
+    box-shadow: var(--shadow-glass);
+    justify-content: center;
+}
+
+/* Hide text when chat is open */
+.chatbot-trigger .trigger-text {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    font-family: var(--font-sans);
+    transition: opacity 0.2s ease;
+    display: inline-block;
+}
+
+.chatbot-trigger.chat-open .trigger-text {
+    display: none;
+}
+
+/* Toggle Open/Close Icons */
+.chatbot-trigger .icon-open {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+}
+
+.chatbot-trigger .icon-close {
+    display: none;
+    width: 18px;
+    height: 18px;
+}
+
+.chatbot-trigger.chat-open .icon-open {
+    display: none;
+}
+
+.chatbot-trigger.chat-open .icon-close {
+    display: inline-block;
+}
+
+.chatbot-window {
+    width: 385px;
+    height: 530px;
+    border-radius: 8px;
+    border: 1px solid var(--border-glass-bright);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+    transform-origin: bottom right;
+}
+
+.chatbot-window.chat-active {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.chat-header {
+    background: rgba(15, 14, 13, 0.85);
+    border-bottom: 1px solid var(--border-glass);
+    padding: 18px 20px;
+}
+
+.chat-agent-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid var(--gold);
+}
+
+.chat-messages {
+    background: rgba(9, 8, 7, 0.45);
+}
+
+/* Outgoing bubbles (client) and Incoming bubbles (AI) */
+.message.incoming {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-glass);
+}
+
+.message.outgoing {
+    background: var(--gold-gradient);
+    color: var(--text-dark);
+}
+
+/* Footer branding */
+.footer {
+    background: #050504;
+    padding: 80px 0 30px 0;
+    border-top: 1px solid var(--border-glass);
+}
+
+.footer-container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+}
+
+/* --- UPGRADED AGENT COMMAND PORTAL PANELS --- */
+
+/* Dedicated app takeover layout */
+#agent-view.active-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    background: linear-gradient(rgba(9, 8, 7, 0.85), rgba(9, 8, 7, 0.85)), url('agent-portal-bg.jpg') no-repeat center center / cover;
+    display: block;
+    animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.agent-portal-layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* VERTICAL LEFT SIDEBAR (Frost-Glass Panel) */
+.agent-sidebar {
+    width: 260px;
+    background: #0c0b0a;
+    border-right: 1px solid var(--border-glass-bright);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.sidebar-brand {
+    padding: 26px 30px;
+    border-bottom: 1px solid var(--border-glass-bright);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.15rem;
+    letter-spacing: 2.5px;
+}
+
+.sidebar-nav {
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+/* Sidebar links matching mockup's glass look */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-muted);
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.sidebar-link i {
+    width: 16px;
+    height: 16px;
+    color: var(--text-muted);
+}
+
+.sidebar-link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Active sidebar link is glass-frosted gold highlight (Mockup style) */
+.sidebar-link.active {
+    color: var(--gold);
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid var(--border-gold);
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.05);
+}
+
+.sidebar-link.active i {
+    color: var(--gold);
+}
+
+.sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid var(--border-glass-bright);
+}
+
+/* Agent workspace main frame panels */
+.agent-content-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.agent-content-header {
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--border-glass-bright);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(12, 11, 10, 0.6);
+    height: 80px;
+    backdrop-filter: blur(12px);
+}
+
+.agent-profile-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glass);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    box-shadow: var(--shadow-glass);
+}
+
+.agent-panel {
+    display: none;
+    padding: 40px;
+    overflow-y: auto;
+    height: calc(100% - 80px);
+    width: 100%;
+}
+
+.agent-panel.active-panel {
+    display: block;
+}
+
+.dashboard-panel {
+    background: var(--card-bg-glass);
+    border: 1px solid var(--border-glass-bright);
+    border-radius: 6px;
+    padding: 30px;
+}
+
+/* Metrics Cards (Overview metrics glass boxes) */
+.metric-card {
+    background: var(--card-bg-glass);
+    border: 1px solid var(--border-glass-bright);
+    padding: 22px 25px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: var(--transition);
+}
+
+.metric-card:hover {
+    border-color: var(--border-gold);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.metric-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid var(--border-gold);
+    border-radius: 4px;
+    color: var(--gold);
+}
+
+.leads-table th {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Chatbot Session Cards List (Left Sidebar) */
+.chat-session-card {
+    background: var(--card-bg-glass);
+    border: 1px solid var(--border-glass-bright);
+    padding: 16px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.chat-session-card:hover {
+    border-color: var(--border-gold);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.chat-session-card.active-session {
+    background: rgba(212, 175, 55, 0.08);
+    border-color: var(--border-gold);
+    box-shadow: var(--shadow-glow);
+}
+
+.chat-session-card.active-session h6 {
+    color: var(--gold);
+}
+
+.chat-session-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid var(--border-gold);
+    border-radius: 50%;
+    color: var(--gold);
+}
+
+.chat-session-card.active-session .chat-session-icon {
+    background: var(--gold);
+    color: var(--text-dark);
+}
+
+/* Chat Transcript Rows */
+.chat-transcript-body {
+    background: rgba(9, 8, 7, 0.5);
+    border: 1px solid var(--border-glass-bright);
+    border-radius: 6px;
+}
+
+.chat-msg-bubble {
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+}
+
+.incoming-row .chat-msg-bubble {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-glass);
+    color: var(--text-primary);
+    border-bottom-left-radius: 0;
+}
+
+.outgoing-row .chat-msg-bubble {
+    background: var(--gold-glow);
+    border: 1px solid var(--border-gold);
+    color: var(--gold);
+    border-bottom-right-radius: 0;
+}
+
+/* Day to Day Task Items & Copy Cards */
+.task-item {
+    background: var(--card-bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 4px;
+    padding: 12px 18px;
+    transition: var(--transition);
+}
+
+.task-item:hover {
+    border-color: var(--border-gold);
+}
+
+.tool-link-card {
+    background: var(--card-bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 4px;
+    transition: var(--transition);
+    height: 95px;
+}
+
+.tool-link-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-gold);
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: var(--shadow-glow);
+}
+
+.template-card {
+    background: var(--card-bg-glass);
+    border: 1px solid var(--border-glass);
+    border-radius: 6px;
+}
+
+/* Security Auth Login Modal */
+.login-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(9, 8, 7, 0.75);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    z-index: 3000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.login-modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 40px;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9);
+    border: 1px solid var(--border-glass-bright);
+}
+
+.login-card:hover {
+    border-color: var(--border-gold);
+}
+
+/* RPR Hub Utility Styles */
+.rpr-report-card:hover {
+    border-color: var(--border-gold) !important;
+    background: rgba(212, 175, 55, 0.05) !important;
+    transform: translateX(3px);
+}
+
+.progress-bar-container {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* RESPONSIVE SCALES */
+@media (max-width: 1024px) {
+    .agent-portal-layout {
+        flex-direction: column;
+    }
+    
+    .agent-sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-glass-bright);
+    }
+    
+    .sidebar-brand {
+        padding: 15px 30px;
+    }
+    
+    .sidebar-nav {
+        flex-direction: row;
+        padding: 10px 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .sidebar-link {
+        padding: 8px 15px;
+        width: auto;
+        display: inline-flex;
+    }
+    
+    .sidebar-footer {
+        display: none;
+    }
+    
+    .agent-content-area {
+        height: calc(100% - 150px);
+    }
+    
+    .helper-grid, .crm-config-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* PUBLIC PAGE RESPONSIVES */
+    .hero-container {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+        text-align: center !important;
+    }
+    
+    .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .hero-lead {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .hero-image-container {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin-top: 20px !important;
+    }
+    
+    .hero-image-wrapper {
+        max-width: 420px !important;
+        margin: 0 auto !important;
+    }
+    
+    .floating-stat {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        bottom: -25px !important;
+        animation: float-mobile 5.5s ease-in-out infinite !important;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+    
+    .market-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 0;
+    }
+    
+    .mobile-toggle {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--secondary-bg);
+        border-bottom: 1px solid var(--border-glass);
+        flex-direction: column;
+        padding: 30px;
+        gap: 20px;
+        transform: translateY(-150%);
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--transition);
+        z-index: -1;
+    }
+    
+    .nav-menu.mobile-active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .valuation-form .form-row {
+        flex-direction: column;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    /* Mobile Spacing & Typography */
+    .hero {
+        padding-top: 110px !important;
+        padding-bottom: 60px !important;
+    }
+    
+    .properties-section,
+    .market-section,
+    .news-section,
+    .contact-section {
+        padding: 60px 0 !important;
+    }
+    
+    .hero-title {
+        font-size: 2.4rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .section-title {
+        font-size: 1.85rem !important;
+        line-height: 1.25 !important;
+    }
+    
+    .section-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 15px !important;
+    }
+    
+    .contact-form-card {
+        padding: 30px 20px !important;
+    }
+    
+    .valuation-card {
+        padding: 20px !important;
+    }
+    
+    /* Mobile Chatbot Adjustments */
+    .chatbot-window {
+        width: calc(100vw - 40px) !important;
+        height: 480px !important;
+        right: 20px !important;
+        bottom: 85px !important;
+    }
+    
+    /* Mobile Login Modal Width */
+    .login-card {
+        width: calc(100% - 30px) !important;
+        padding: 30px 20px !important;
+    }
+}
+
+/* Floating animation adjusted for center-aligned mobile placement */
+@keyframes float-mobile {
+    0% { transform: translateX(-50%) translateY(0px); }
+    50% { transform: translateX(-50%) translateY(-8px); }
+    100% { transform: translateX(-50%) translateY(0px); }
+}
+
+/* --- LIGHT & DARK SECTION THEME OVERRIDES --- */
+
+/* White Page Background Sections (Hero, Showcases, News Feed, Contact, Market Analytics) */
+.hero,
+.properties-section,
+.news-section,
+.contact-section,
+.market-section {
+    background-color: #ffffff !important;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 100% 60%, rgba(212, 175, 55, 0.01) 0%, transparent 40%) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Titles and Headers on White Background */
+.hero .hero-title,
+.properties-section .section-title,
+.news-section .section-title,
+.contact-section .section-title,
+.market-section .section-title,
+.property-details h3,
+.news-card h3,
+.contact-form-card h3 {
+    color: var(--text-dark) !important;
+}
+
+/* Muted / Lead Texts on White Background */
+.hero .hero-lead,
+.properties-section .section-lead,
+.news-section .news-lead,
+.news-section .news-meta,
+.hero .form-note,
+.contact-section p,
+.market-section p,
+.contact-section .contact-lead,
+.contact-section .agent-title,
+.contact-section .form-privacy,
+.property-specs {
+    color: var(--text-muted) !important;
+}
+
+/* Premium Light Frosted Glass Cards for White Theme */
+.hero .glass,
+.properties-section .glass,
+.news-section .glass,
+.contact-section .glass,
+.market-section .glass {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(0, 0, 0, 0.07) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+    color: var(--text-primary) !important;
+}
+
+.hero .glass:hover,
+.properties-section .glass:hover,
+.news-section .glass:hover,
+.contact-section .glass:hover,
+.market-section .glass:hover {
+    border-color: var(--border-gold) !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 0 30px rgba(212, 175, 55, 0.08) !important;
+}
+
+/* Text boxes (Inputs, Selects, Textareas) styled as Solid Black with Gold Accents */
+.hero input,
+.contact-section input,
+.contact-section select,
+.contact-section textarea,
+.login-card input {
+    background: #000000 !important;
+    border: 1px solid #1c1a17 !important;
+    color: #ffffff !important;
+    font-family: var(--font-sans) !important;
+}
+
+.hero input::placeholder,
+.contact-section input::placeholder,
+.contact-section textarea::placeholder,
+.login-card input::placeholder {
+    color: #888888 !important;
+}
+
+.hero input:focus,
+.contact-section input:focus,
+.contact-section select:focus,
+.contact-section textarea:focus,
+.login-card input:focus {
+    background: #000000 !important;
+    border-color: var(--gold) !important;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.3) !important;
+    outline: none !important;
+}
+
+/* Explicit Dark Footer (Anchors page, matches high-end layout) */
+.footer {
+    background-color: #090807 !important;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 100% 60%, rgba(212, 175, 55, 0.02) 0%, transparent 40%) !important;
+    color: #f5f4f0 !important;
+    border-top: 1px solid var(--border-glass) !important;
+}
+
+/* Explicit Header Text Styling (Header has a dark overlay, so items must stay white/readable) */
+.header .logo-light {
+    color: #f5f4f0 !important;
+}
+
+.header .nav-link {
+    color: #b8b5b0 !important;
+}
+
+.header .nav-link:hover {
+    color: #ffffff !important;
+}
+
+.header .btn-outline {
+    border-color: rgba(212, 175, 55, 0.5) !important;
+    color: var(--gold) !important;
+}
+
+.header .btn-outline:hover {
+    background: var(--gold) !important;
+    color: #0c0b0a !important;
+}
+
+/* Primary Action Buttons (Gold Gradient & Black Text) */
+.btn-gold {
+    background: var(--gold-gradient) !important;
+    color: #000000 !important;
+    font-weight: 600 !important;
+    border: 1px solid var(--gold) !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2) !important;
+}
+
+.btn-gold:hover {
+    background: var(--gold-gradient-hover) !important;
+    color: #000000 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45) !important;
+}
+
+/* Chatbot Widget Overrides (Keep chatbot widget in dark tone for high-end look) */
+.chatbot-window {
+    background: rgba(15, 14, 13, 0.96) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.65) !important;
+    color: #f5f4f0 !important;
+}
+
+.chatbot-window h4 {
+    color: #ffffff !important;
+}
+
+.chatbot-window p.chat-status-text {
+    color: #94918a !important;
+}
+
+.chatbot-window .message.incoming {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.07) !important;
+    color: #f5f4f0 !important;
+}
+
+.chatbot-window .chat-input-area {
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    background: rgba(9, 8, 7, 0.45) !important;
+}
+
+.chatbot-window .chat-input-area input {
+    color: #ffffff !important;
+}
+
+.chatbot-window .quick-reply-btn {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    color: #f5f4f0 !important;
+}
+
+.chatbot-window .quick-reply-btn:hover {
+    border-color: var(--gold) !important;
+    color: var(--gold) !important;
+    background: rgba(212, 175, 55, 0.05) !important;
+}
+
+/* Agent Login Modal Overrides (Keep login modal dark and crisp) */
+.login-modal-overlay {
+    background: rgba(5, 5, 4, 0.6) !important;
+}
+
+.login-card {
+    background: rgba(15, 14, 13, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #f5f4f0 !important;
+}
+
+.login-card h3,
+.login-card h5,
+.login-card label {
+    color: #ffffff !important;
+}
